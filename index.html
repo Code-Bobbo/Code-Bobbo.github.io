@@ -1,1 +1,89 @@
-<h1> 荣秋雨大坏蛋</h1><h1> 荣秋雨大坏蛋</h1><h1> 荣秋雨大坏蛋</h1><h1> 荣秋雨大坏蛋</h1><h1> 荣秋雨大坏蛋</h1> 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN"><head> 
+<head>
+<link rel="shortcut icon" href="http://yiwu3.com/wp-content/uploads/2023/06/未标题-1-1.png">
+<title>一梧所知大麦转换工具 - 项目群：856937364</title> 
+ <div class="notice">
+<h2>一梧大麦转换工具</h2>
+<p>Hello，该工具由一梧提供，有问题反馈请联系QQ：804724915，交流群：856937364（名额有限），官网：<a href="https://www.yiwu3.com/" target="_blank" title="yiwu3.com">yiwu3.com</a></p>
+<h2 style="color:red;">先看这里！优化更简单，之前的不好使了</h2>
+<h3 style="color:red;"><a href="https://www.bilibili.com/video/BV1B8411U7G3/?vd_source=de60ff01ad386ebc665c9fe072b32b55" target="_blank" title="yiwu3.com">先看！优化后的使用教程（点击跳转）</a></h3>
+<h3 style="color:red;"><a href="https://www.bilibili.com/video/BV1nz4y1J7XJ/?spm_id_from=333.1007.top_right_bar_window_history.content.click&vd_source=de60ff01ad386ebc665c9fe072b32b55" target="_blank" title="yiwu3.com">原来的使用教程（点击跳转）</a></h3>
+<p>视频中的工具我都打包好了的，获取方式有两种。  1：打开<a href="https://www.yiwu3.com/" target="_blank" title="yiwu3.com">yiwu3.com</a>搜索大麦获取。2：加入q群：499439362看群文件获取。<br>不懂的加我qq：804724915。微信：erdong3314问我！！有空的情况下看到消息秒回，但是最好问题问清楚点。我理解能力差，有时候真要认真思考一会儿"这位好兄弟/好姐妹到底是问我啥问题呀？"，这点算我求求大家了。
+<br>代抢也别找我，我不是黄牛，真没办法帮，时间有限，精力有限。</p>
+<h3 style="color:red;">文字说明</h3>
+<p style="color:red;">  <a href="https://www.damai.cn/" target="_blank" title="大麦">大麦官网（点这里跳转）</a>之前录制的教程把ID转化成二维码，过程太复杂了。<br>今天有空就简单优化了一下。
+  现在流程就是直接输入ID，然后点击编码↓按钮，就会出现最终链接，把最终链接复制下<br>
+打开二维码生成网站：<a href="https://cli.im/" target="_blank" title="yiwu3.com">点这里跳转</a>，粘贴，点击生成二维码就好了
+</p>
+</div>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk"> 
+<meta http-equiv="Content-Language" content="zh-CN"> 
+<script src="jquery.min.js" tppabs="https://7n.w3cschool.cn/statics/js/jquery/1.8.3/jquery.min.js"></script>
+<link href="bootstrap.min.css" tppabs="https://7n.w3cschool.cn/statics/js/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap.min.js" tppabs="https://7n.w3cschool.cn/statics/js/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+	<div id="mainContent">
+	<div>
+		<div>
+
+		<h4>ID转换:(只输入ID就能转化成最终链接)</h4>
+    	<textarea name="url" id="source" rows="5" class="textareas form-control"></textarea>
+	</div>
+    <div style="float:left">
+    	<div>
+
+		  <label data-original-title="" class="radio" id="co_tip" style="margin-left:20px;" ><input name="_type" checked id="co_t" type="radio">编码程序（必须选中！）</label>
+      <button class="btn btn-primary" onclick="javascript:encode_uri();">编码↓</button>
+            
+		</div>
+    </div>
+<div style="clear:both;"></div>
+    <div>
+		<h4>转换结果:</h4>
+		<textarea name="message" id="result" rows="5" class="textareas form-control"></textarea>
+    </div>
+
+	<div>
+		<h4>入群二维码：</h4>
+		<img src="http://yiwu3.com/wp-content/uploads/2023/06/一梧所知QQ项目分享群-中转群-每天最新活动更新.jpg" alt="群二维码">
+    </div>
+<script>
+$(document).ready(function (){
+	$("#en_tip").popover({
+		'title':'encodeURI',
+		'content':'使用Javascript encodeURI() 函数，用于完整的URL编码。',
+		'placement':'right'
+    });
+	$("#co_tip").popover({
+		'title':'encodeURIComponent',
+		'content':'使用Javascript encodeURIComponent() 函数，用于拼接URL的参数。',
+		'placement':'right'
+    });
+});
+function encode_uri() {
+	if($("#co_t").attr("checked"))
+		$("#result").val("https://m.damai.cn/damai/cyclops/scan.html?url="+encodeURIComponent("https://m.damai.cn/damai/detail/sku.html?id=" + $("#source").val()));
+	else
+		$("#result").val(encodeURI($("#source").val()));
+}
+
+function decode_uri() { 
+	if($("#co_t").attr("checked"))
+		$("#source").val(decodeURIComponent($("#result").val()));
+	else
+		$("#source").val(decodeURI($("#result").val()));
+}
+
+</script>
+</div>
+</div>
+
+
+</body>
+</html>
